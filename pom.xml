@@ -39,7 +39,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>6.0.6</version>
+            <version>8.0.11</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
@@ -102,16 +102,6 @@
             <artifactId>spring-web</artifactId>
             <version>${spring.version}</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
-        <dependency>
-            <groupId>commons-dbcp</groupId>
-            <artifactId>commons-dbcp</artifactId>
-            <version>1.4</version>
-        </dependency>
-
-
-
     </dependencies>
 
     <build>
@@ -148,5 +138,14 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <resources>
+            <!--idea默认不会java目录的xml文件打包-->
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
     </build>
 </project>

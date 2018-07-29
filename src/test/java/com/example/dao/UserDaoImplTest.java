@@ -1,13 +1,10 @@
 package com.example.dao;
 
-import com.example.pojo.Hello;
-import com.example.pojo.User;
+import com.example.po.User;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import static org.junit.Assert.*;
 
 public class UserDaoImplTest {
     private ApplicationContext applicationContext;
@@ -21,6 +18,6 @@ public class UserDaoImplTest {
     public void findUserById() throws Exception {
         UserDao userDao = (UserDao) applicationContext.getBean("userDao");
         User user = userDao.findUserById(1);
-        System.out.println(user.getName());
+        System.out.println(user.getUsername());
     }
 }

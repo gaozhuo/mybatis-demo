@@ -1,6 +1,6 @@
 package com.example.mapper;
 
-import com.example.pojo.User;
+import com.example.po.User;
 
 import java.util.List;
 

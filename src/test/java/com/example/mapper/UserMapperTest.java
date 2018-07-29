@@ -1,16 +1,10 @@
 package com.example.mapper;
 
-import com.example.pojo.User;
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import com.example.po.User;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import java.io.Reader;
 
 public class UserMapperTest {
     private ApplicationContext applicationContext;
@@ -23,8 +17,8 @@ public class UserMapperTest {
     @Test
     public void findUserById() {
         UserMapper userMapper = (UserMapper) applicationContext.getBean("userMapper");
-        User user = userMapper.findUserById(2);
-        System.out.println(user.getName());
+        User user = userMapper.findUserById(1);
+        System.out.println(user.getUsername());
     }
 
     @Test

@@ -28,14 +28,14 @@
         <property name="configLocation" value="mybatis/mybatis-config.xml"/>
         <!-- 数据源 -->
         <property name="dataSource" ref="dataSource"/>
+        <!--mapper.xml文件位置，配置了该属性，mapper接口和xml就不需要放在同一个包下了-->
+        <property name="mapperLocations" value="classpath*:/mapper/**/*.xml"/>
     </bean>
 
     <!-- 原始dao接口 -->
     <bean id="userDao" class="com.example.dao.UserDaoImpl">
         <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
     </bean>
-
-    <bean id="hello" class="com.example.pojo.Hello"/>
 
     <!-- mapper配置
     MapperFactoryBean：根据mapper接口生成代理对象
@@ -58,6 +58,4 @@
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
 
     </bean>
-
-
 </beans>

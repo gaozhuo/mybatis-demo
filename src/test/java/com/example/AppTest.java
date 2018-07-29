@@ -1,6 +1,6 @@
 package com.example;
 
-import com.example.pojo.User;
+import com.example.po.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -28,7 +28,7 @@ public class AppTest {
     public void findUserByIdTest() throws Exception {
         SqlSession session = sqlSessionFactory.openSession();
         User user = session.selectOne("test.findUserById", 1);
-        System.out.println(user.getName());
+        System.out.println(user.getUsername());
         session.close();
     }
 
